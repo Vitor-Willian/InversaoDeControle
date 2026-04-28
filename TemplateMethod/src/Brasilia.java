@@ -1,26 +1,21 @@
-public class Brasilia implements Observer {
+public class Brasilia extends Cidade {
     
-    @Override
-    public void updateTemp(Subject s) {
-        double temperatura = ((PCD) s).getTemperatura();
-        System.out.println("Dados atualizados Brasilia");
-        System.out.println("Temperatura: " + temperatura);
-
+    public String getNome() {
+        return "Brasilia";
+    }
+    public String getUnidade() {
+        return "Kelvin";
     }
 
-    @Override
-    public void updateUmi(Subject s) {
-        double umidade = ((PCD) s).getUmidade();
-        System.out.println("Dados atualizados Brasilia");
-        System.out.println("Umidade: " + umidade);
+    public double processarTemp(double temp) {
+        return temp + 273.15;
+    }
+    public double processarUmi(double umi) {
+        return umi;
+    }
+    public double processarPH(double ph) {
+        return ph;
     }
 
-    @Override
-    public void updatePH(Subject s) {
-        double ph = ((PCD) s).getPh();
-        System.out.println("Dados atualizados Brasilia");
-        System.out.println("pH: " + ph);
-      
-    }
 }
     

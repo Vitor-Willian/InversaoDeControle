@@ -1,25 +1,23 @@
-public class SP implements Observer {
+public class SP extends Cidade {
     
-    @Override
-    public void updateTemp(Subject s) {
-        double temperatura = ((PCD) s).getTemperatura();
-        System.out.println("Dados atualizados SP");
-        System.out.println("Temperatura: " + temperatura);
-
+    public String getNome() {
+        return "São Paulo";
     }
 
-    @Override
-    public void updateUmi(Subject s) {
-        double umidade = ((PCD) s).getUmidade();
-        System.out.println("Dados atualizados SP");
-        System.out.println("Umidade: " + umidade);
+    public String getUnidade() {
+        return "Fahrenheit";
     }
 
-    @Override
-    public void updatePH(Subject s) {
-        double ph = ((PCD) s).getPh();
-        System.out.println("Dados atualizados SP");
-        System.out.println("pH: " + ph);
-      
+    public double processarTemp(double temp) {
+        return (temp * 9/5) + 32;
     }
+
+    public double processarUmi(double umi) {
+        return umi;
+    }
+
+    public double processarPH(double ph) {
+        return ph;
+    }
+
 }

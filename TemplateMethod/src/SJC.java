@@ -1,25 +1,25 @@
-public class SJC implements Observer {
+public class SJC extends Cidade {
     
-    @Override
-    public void updateTemp(Subject s) {
-        double temperatura = ((PCD) s).getTemperatura();
-        System.out.println("Dados atualizados SJC");
-        System.out.println("Temperatura: " + temperatura);
-
+    public String getNome() {
+        return "São José dos Campos";
+    }
+    public String getUnidade() {
+        return "Celsius";
     }
 
-    @Override
-    public void updateUmi(Subject s) {
-        double umidade = ((PCD) s).getUmidade();
-        System.out.println("Dados atualizados SJC");
-        System.out.println("Umidade: " + umidade);
+    public double processarTemp(double temp) {
+        return temp;
     }
-
-    @Override
-    public void updatePH(Subject s) {
-        double ph = ((PCD) s).getPh();
-        System.out.println("Dados atualizados SJC");
-        System.out.println("pH: " + ph);
-      
+    public double processarUmi(double umi) {
+        if (umi < 30){
+            return umi + 10;
+        } else if (umi > 70){
+            return umi - 10;
+        } else {
+            return umi;
+        }
+    }
+    public double processarPH(double ph) {
+        return ph;
     }
 }

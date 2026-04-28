@@ -9,13 +9,13 @@ public class App {
         pcd2.addObserver(new SP());
         pcd2.addObserver(new SJC());
         pcd3.addObserver(new Rio());
+        pcd3.addObserver(new Brasilia());
 
-        pcd1.setTemperatura(30.0);
+        pcd1.setUmidade(20.0);
         System.out.println("\n");
-        pcd2.setUmidade(25.0);
+        pcd2.setTemperatura(25.0);
         System.out.println("\n");
         pcd3.setTemperatura(28.0);
-        pcd3.setUmidade(37.0);
         pcd3.setPh(7.0);
     }
 }

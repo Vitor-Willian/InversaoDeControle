@@ -1,25 +1,20 @@
-public class Rio implements Observer {
+public class Rio extends Cidade {
     
-    @Override
-    public void updateTemp(Subject s) {
-        double temperatura = ((PCD) s).getTemperatura();
-        System.out.println("Dados atualizados Rio");
-        System.out.println("Temperatura: " + temperatura);
-
+    public String getNome() {
+        return "Rio de Janeiro";
+    }
+    public String getUnidade() {
+        return "Celsius";
     }
 
-    @Override
-    public void updateUmi(Subject s) {
-        double umidade = ((PCD) s).getUmidade();
-        System.out.println("Dados atualizados Rio");
-        System.out.println("Umidade: " + umidade);
+    public double processarTemp(double temp) {
+        return temp;
+    }
+    public double processarUmi(double umi) {
+        return umi;
+    }
+    public double processarPH(double ph) {
+        return ph;
     }
 
-    @Override
-    public void updatePH(Subject s) {
-        double ph = ((PCD) s).getPh();
-        System.out.println("Dados atualizados Rio");
-        System.out.println("pH: " + ph);
-      
-    }
 }
